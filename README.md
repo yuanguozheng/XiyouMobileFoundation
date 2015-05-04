@@ -12,3 +12,6 @@ XiyouMobile ASP.NET MVC 公共类库
 3.XYMSuccessResult -> 成功结果
 
 4.XYMErrorsResult -> 错误结果
+
+## 欢迎继续补充
+如有问题可发邮件至：yuanguozheng@outlook.com
