@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // 特性集控制。更改这些特性值可修改
 // 与程序集关联的信息。
 [assembly: AssemblyTitle("XiyouMobileFoundation")]
-[assembly: AssemblyDescription("Web API Library For ASP.NET MVC By XiyouMobile")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("XiyouMobile")]
 [assembly: AssemblyProduct("XiyouMobileFoundation")]
