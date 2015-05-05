@@ -1,8 +1,8 @@
 # XiyouMobileFoundation
-XiyouMobile ASP.NET MVC 公共类库
+XiyouMobile 公共类库
 
 ## 功能介绍
-该类库旨在提供常用的ASP.NET MVC开发工具类，目前包括公共工具部分、公共模型部分、WebAPI部分
+该类库旨在提供常用的C#开发工具类，目前包括公共工具部分、公共模型部分、ASP.NET MVC部分
 
 ## 公共工具部分
 1.XYMHttpUtil -> HTTP请求工具类
