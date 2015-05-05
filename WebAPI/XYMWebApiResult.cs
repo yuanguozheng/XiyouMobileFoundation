@@ -21,7 +21,7 @@ namespace XiyouMobileMVCLib.WebAPI
     /// <summary>
     /// 返回Api结果
     /// </summary>
-    public class XYMApiResult : JsonResult
+    public class XYMWebApiResult : JsonResult
     {
         /// <summary>
         /// 默认Content-Type
@@ -41,7 +41,7 @@ namespace XiyouMobileMVCLib.WebAPI
         /// <summary>
         /// 构造函数
         /// </summary>
-        public XYMApiResult()
+        public XYMWebApiResult()
         {
             this.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
         }
@@ -50,7 +50,7 @@ namespace XiyouMobileMVCLib.WebAPI
         /// 带返回数据的构造函数
         /// </summary>
         /// <param name="data">要返回的数据</param>
-        public XYMApiResult(object data)
+        public XYMWebApiResult(object data)
         {
             this.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
             this.data = data;

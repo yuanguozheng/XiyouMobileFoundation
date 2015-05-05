@@ -3,7 +3,7 @@
  * 
  * XiyouMobileMVCLib
  * 
- * XYMUniResult.cs
+ * XYMWebApiUniResult.cs
  * 
  * Created by Yuan Guozheng on 2015-5-5.
  */
@@ -18,7 +18,7 @@ namespace XiyouMobileMVCLib.WebAPI
     /// <summary>
     /// 通用返回结果
     /// </summary>
-    public class XYMUniResult
+    public class XYMWebApiUniResult
     {
         /// <summary>
         /// 标识是否成功
