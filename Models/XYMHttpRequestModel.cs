@@ -16,20 +16,35 @@ using System.Net;
 
 namespace XiyouMobileMVCLib.Models
 {
+    /// <summary>
+    /// HTTP请求设置实体类
+    /// </summary>
     public class XYMHttpRequestModel
     {
+        private const int TIME_OUT = 30 * 1000;  // 默认30秒超时
+
+        /// <summary>
+        /// 构造函数，初始化默认值
+        /// </summary>
         public XYMHttpRequestModel()
         {
             _Method = HttpMethod.GET;
             _CachePolicy = WebRequest.DefaultCachePolicy;
             _KeepAlive = true;
-            _Timeout = 30;
+            _Timeout = TIME_OUT;
             _Headers = new Dictionary<string, string>();
         }
 
+        /// <summary>
+        /// 请求URL
+        /// </summary>
         public String Url { get; set; }
 
         private HttpMethod _Method;
+
+        /// <summary>
+        /// 请求方法，支持GET、POST、PUT、DELETE、HEAD，默认GET
+        /// </summary>
         public HttpMethod Method
         {
             get
@@ -46,6 +61,10 @@ namespace XiyouMobileMVCLib.Models
         }
 
         private RequestCachePolicy _CachePolicy;
+
+        /// <summary>
+        /// 缓存策略，默认DefaultCachePolicy
+        /// </summary>
         public RequestCachePolicy CachePolicy
         {
             get
@@ -62,6 +81,10 @@ namespace XiyouMobileMVCLib.Models
         }
 
         private bool _KeepAlive;
+
+        /// <summary>
+        /// 保持连接，默认为true
+        /// </summary>
         public bool KeepAlive
         {
             get
@@ -78,6 +101,10 @@ namespace XiyouMobileMVCLib.Models
         }
 
         private int _Timeout;
+
+        /// <summary>
+        /// 超时时长，默认30秒
+        /// </summary>
         public int Timeout
         {
             get
@@ -94,6 +121,10 @@ namespace XiyouMobileMVCLib.Models
         }
 
         private Dictionary<String, String> _Headers;
+
+        /// <summary>
+        /// HTTP头元素集合
+        /// </summary>
         public Dictionary<String, String> Headers
         {
             get
@@ -110,6 +141,9 @@ namespace XiyouMobileMVCLib.Models
         }
     }
 
+    /// <summary>
+    /// HTTP请求方法枚举
+    /// </summary>
     public enum HttpMethod
     {
         GET, POST, PUT, HEAD, DELETE,
