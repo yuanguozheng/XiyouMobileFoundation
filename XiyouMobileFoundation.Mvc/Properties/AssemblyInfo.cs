@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息通过以下
 // 特性集控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("XiyouMobileFoundation")]
-[assembly: AssemblyDescription("Web API Library For ASP.NET MVC By XiyouMobile")]
+[assembly: AssemblyTitle("XiyouMobileFoundation.Mvc")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("XiyouMobile")]
-[assembly: AssemblyProduct("XiyouMobileFoundation")]
-[assembly: AssemblyCopyright("Copyright © XiyouMobile 2014")]
-[assembly: AssemblyTrademark("XiyouMobile")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("XiyouMobileFoundation.Mvc")]
+[assembly: AssemblyCopyright("Copyright ©  2015")]
+[assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 // 将 ComVisible 设置为 false 使此程序集中的类型
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("ae4614b6-8175-477a-951c-209a5daecf1d")]
+[assembly: Guid("a8cb97b0-a078-4b77-b2ed-711f37ec451f")]
 
 // 程序集的版本信息由下面四个值组成: 
 //

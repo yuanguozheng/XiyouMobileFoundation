@@ -1,7 +1,7 @@
 ﻿/**
  * Copyright (C) 2015 Xiyou Mobile Application Lab.
  * 
- * XiyouMobileMVCLib
+ * XiyouMobileFoundation
  * 
  * XYMWebApiResultManager.cs
  * 
@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace XiyouMobileMVCLib.WebAPI
+namespace XiyouMobileFoundation.WebAPI
 {
     /// <summary>
     /// API常见错误类型枚举

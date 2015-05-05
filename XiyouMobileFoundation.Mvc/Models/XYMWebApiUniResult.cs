@@ -1,7 +1,7 @@
 ﻿/**
  * Copyright (C) 2015 Xiyou Mobile Application Lab.
  * 
- * XiyouMobileMVCLib
+ * XiyouMobileFoundation
  * 
  * XYMWebApiUniResult.cs
  * 
@@ -13,7 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace XiyouMobileMVCLib.WebAPI
+namespace XiyouMobileFoundation.WebAPI
 {
     /// <summary>
     /// 通用返回结果

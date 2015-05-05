@@ -1,4 +1,4 @@
-# XiyouMobileMVCLib
+# XiyouMobileFoundation
 XiyouMobile ASP.NET MVC 公共类库
 
 ## 功能介绍

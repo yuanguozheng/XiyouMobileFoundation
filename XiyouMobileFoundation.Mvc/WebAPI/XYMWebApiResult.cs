@@ -1,7 +1,7 @@
 ﻿/**
  * Copyright (C) 2015 Xiyou Mobile Application Lab.
  * 
- * XiyouMobileMVCLib
+ * XiyouMobileFoundation
  * 
  * XYMApiResult.cs
  * 
@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
-namespace XiyouMobileMVCLib.WebAPI
+namespace XiyouMobileFoundation.WebAPI
 {
     /// <summary>
     /// 返回Api结果

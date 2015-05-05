@@ -1,7 +1,7 @@
 ﻿/**
  * Copyright (C) 2015 Xiyou Mobile Application Lab.
  * 
- * XiyouMobileMVCLib
+ * XiyouMobileFoundation
  * 
  * XYMWebApiUniResult.cs
  * 
@@ -13,26 +13,40 @@ using System.Linq;
 using System.Text;
 using System.Net.Cache;
 using System.Net;
+using System.IO;
 
-namespace XiyouMobileMVCLib.Models
+namespace XiyouMobileFoundation.Models
 {
     /// <summary>
     /// HTTP请求设置实体类
     /// </summary>
     public class XYMHttpRequestModel
     {
+        private const String CHARSET = "utf-8";  // 默认编码集
+
         private const int TIME_OUT = 30 * 1000;  // 默认30秒超时
+
+        private const String BOUNDARY = "----abcdefg";  // POST上传文件分隔符
+
+        private const String POST_CONTENT_TYPE = "application/x-www-form-urlencoded";  // 文本参数Content-Type
+
+        private const String FILE_CONTENT_TYPE = "multipart/form-data";  // 文件参数Content-Type
 
         /// <summary>
         /// 构造函数，初始化默认值
         /// </summary>
         public XYMHttpRequestModel()
         {
-            _Method = HttpMethod.GET;
-            _CachePolicy = WebRequest.DefaultCachePolicy;
-            _KeepAlive = true;
-            _Timeout = TIME_OUT;
-            _Headers = new Dictionary<string, string>();
+            Url = null;
+            Method = HttpMethod.GET;
+            Charset = CHARSET;
+            CachePolicy = WebRequest.DefaultCachePolicy;
+            KeepAlive = true;
+            Timeout = TIME_OUT;
+            Headers = new Dictionary<string, string>();
+            UrlEncodedParams = new Dictionary<string, string>();
+            IsFileReqeuset = false;
+            PostFile = null;
         }
 
         /// <summary>
@@ -40,105 +54,75 @@ namespace XiyouMobileMVCLib.Models
         /// </summary>
         public String Url { get; set; }
 
-        private HttpMethod _Method;
+        /// <summary>
+        /// 获取编码集，默认UTF-8
+        /// </summary>
+        public String Charset { get; set; }
 
         /// <summary>
         /// 请求方法，支持GET、POST、PUT、DELETE、HEAD，默认GET
         /// </summary>
-        public HttpMethod Method
-        {
-            get
-            {
-                return _Method;
-            }
-            set
-            {
-                if (value != _Method)
-                {
-                    _Method = value;
-                }
-            }
-        }
-
-        private RequestCachePolicy _CachePolicy;
+        public HttpMethod Method { get; set; }
 
         /// <summary>
-        /// 缓存策略，默认DefaultCachePolicy
+        /// 根据Method和请求参数获得ContentType
         /// </summary>
-        public RequestCachePolicy CachePolicy
+        public String ContentType
         {
             get
             {
-                return _CachePolicy;
-            }
-            set
-            {
-                if (value != _CachePolicy)
+                switch (Method)
                 {
-                    _CachePolicy = value;
+                    case HttpMethod.GET:
+                        return null;
+                    case HttpMethod.POST:
+                        {
+                            if (IsFileReqeuset)
+                            {
+                                return FILE_CONTENT_TYPE;
+                            }
+                            return POST_CONTENT_TYPE;
+                        }
+                    default:
+                        return null;
                 }
             }
         }
-
-        private bool _KeepAlive;
 
         /// <summary>
         /// 保持连接，默认为true
         /// </summary>
-        public bool KeepAlive
-        {
-            get
-            {
-                return _KeepAlive;
-            }
-            set
-            {
-                if (value != _KeepAlive)
-                {
-                    _KeepAlive = value;
-                }
-            }
-        }
+        public bool IsFileReqeuset { get; set; }
 
-        private int _Timeout;
+        /// <summary>
+        /// 缓存策略，默认DefaultCachePolicy
+        /// </summary>
+        public RequestCachePolicy CachePolicy { get; set; }
+
+        /// <summary>
+        /// 保持连接，默认为true
+        /// </summary>
+        public bool KeepAlive { get; set; }
 
         /// <summary>
         /// 超时时长，默认30秒
         /// </summary>
-        public int Timeout
-        {
-            get
-            {
-                return _Timeout;
-            }
-            set
-            {
-                if (value != _Timeout)
-                {
-                    _Timeout = value;
-                }
-            }
-        }
-
-        private Dictionary<String, String> _Headers;
+        public int Timeout { get; set; }
 
         /// <summary>
         /// HTTP头元素集合
         /// </summary>
-        public Dictionary<String, String> Headers
-        {
-            get
-            {
-                return _Headers;
-            }
-            set
-            {
-                if (value != _Headers)
-                {
-                    _Headers = value;
-                }
-            }
-        }
+        public Dictionary<String, String> Headers { get; set; }
+
+        /// <summary>
+        /// 字符串参数集合
+        /// </summary>
+        public Dictionary<String, String> UrlEncodedParams { get; set; }
+
+        /// <summary>
+        /// 要上传的文件
+        /// </summary>
+        public String PostFile { get; set; }
     }
 
     /// <summary>
