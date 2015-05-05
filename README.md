@@ -9,9 +9,11 @@ XiyouMobile 公共类库
 
 2.XYMTextUtils -> XYMTextEncoder 文本转码工具类
 
-3.XYMFileUtils -> XYMFileNameUtil 文件名工具类
+3.XYMFileUtils
 
-               -> XYMMimeMapping MIME工具类
+ -> XYMFileNameUtil 文件名工具类
+
+ -> XYMMimeMapping MIME工具类
 
 ## 公共模型部分
 1.XYMHttpPostFileModel -> 通用POST文件上传实体类
