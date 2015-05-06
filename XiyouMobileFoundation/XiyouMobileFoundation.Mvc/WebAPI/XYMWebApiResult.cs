@@ -3,7 +3,7 @@
  * 
  * XiyouMobileFoundation
  * 
- * XYMApiResult.cs
+ * XYMWebApiResult.cs
  * 
  * Created by Yuan Guozheng on 2015-5-5.
  */

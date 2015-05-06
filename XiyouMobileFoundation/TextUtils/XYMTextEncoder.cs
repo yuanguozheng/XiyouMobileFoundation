@@ -29,5 +29,38 @@ namespace XiyouMobileFoundation.TextUtils
         {
             return System.Web.HttpUtility.UrlEncode(text, Encoding.GetEncoding(code));
         }
+
+        /// <summary>
+        /// GBK转UTF-8
+        /// </summary>
+        /// <param name="data">GBK编码流</param>
+        /// <returns>UTF-8字符串</returns>
+        public static string GBKToUTF8(byte[] data)
+        {
+            byte[] trans = Encoding.Convert(Encoding.GetEncoding("GBK"), Encoding.UTF8, data);
+            return Encoding.UTF8.GetString(trans);
+        }
+
+        /// <summary>
+        /// GB2312转UTF-8
+        /// </summary>
+        /// <param name="data">GB2312编码流</param>
+        /// <returns>UTF-8字符串</returns>
+        public static string GB2312ToUTF8(byte[] data)
+        {
+            byte[] trans = Encoding.Convert(Encoding.GetEncoding("GB2312"), Encoding.UTF8, data);
+            return Encoding.UTF8.GetString(trans);
+        }
+
+        /// <summary>
+        /// ISO8859-1转UTF-8
+        /// </summary>
+        /// <param name="data">ISO8859-1编码流</param>
+        /// <returns>UTF-8字符串</returns>
+        public static string GB2312ToUTF8(byte[] data)
+        {
+            byte[] trans = Encoding.Convert(Encoding.GetEncoding("ISO8859-1"), Encoding.UTF8, data);
+            return Encoding.UTF8.GetString(trans);
+        }
     }
 }
