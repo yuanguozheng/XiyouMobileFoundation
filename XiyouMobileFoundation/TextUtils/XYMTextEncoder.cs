@@ -57,7 +57,7 @@ namespace XiyouMobileFoundation.TextUtils
         /// </summary>
         /// <param name="data">ISO8859-1编码流</param>
         /// <returns>UTF-8字符串</returns>
-        public static string GB2312ToUTF8(byte[] data)
+        public static string ISO8859ToUTF8(byte[] data)
         {
             byte[] trans = Encoding.Convert(Encoding.GetEncoding("ISO8859-1"), Encoding.UTF8, data);
             return Encoding.UTF8.GetString(trans);

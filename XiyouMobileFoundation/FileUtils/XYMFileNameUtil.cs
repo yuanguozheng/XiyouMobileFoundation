@@ -56,7 +56,7 @@ namespace XiyouMobileFoundation.FileUtils
             {
                 return null;
             }
-            if (withDot)
+            if (!withDot)
             {
                 index++;
             }

@@ -42,7 +42,15 @@ namespace XiyouMobileFoundation.FileUtils
         /// <returns>MIME字符串</returns>
         public static string GetMimeByExt(string ext)
         {
-            string mime = mimeDict[ext];
+            string mime;
+            if (!mimeDict.ContainsKey(ext))
+            {
+                mime = null;
+            }
+            else
+            {
+                mime = mimeDict[ext];
+            }
             if (string.IsNullOrWhiteSpace(mime))
             {
                 mime = (string)XYMMimeMapping.mimeDict[".*"];
@@ -262,6 +270,7 @@ namespace XiyouMobileFoundation.FileUtils
             XYMMimeMapping.AddMimeMapping(".xsd", "text/xml");
             XYMMimeMapping.AddMimeMapping(".z", "application/x-compress");
             XYMMimeMapping.AddMimeMapping(".zip", "application/x-zip-compressed");
+            XYMMimeMapping.AddMimeMapping(".mp4", "video/mp4");
             XYMMimeMapping.AddMimeMapping(".*", "application/octet-stream");
         }
     }
