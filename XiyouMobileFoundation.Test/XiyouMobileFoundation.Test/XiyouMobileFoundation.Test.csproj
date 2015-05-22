@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{59865EA1-625B-4CBE-A73F-E2488BAC8C15}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{CE6DEC16-74CB-48D4-AF2D-8DC8CBEEB223}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XiyouMobileFoundation</RootNamespace>
-    <AssemblyName>XiyouMobileFoundation</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <RootNamespace>XiyouMobileFoundation.Test</RootNamespace>
+    <AssemblyName>XiyouMobileFoundation.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,7 +34,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,19 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmailUtil\XYMSmtpEmailSender.cs" />
-    <Compile Include="EncryptUtil\XYMDesUtil.cs" />
-    <Compile Include="FileUtils\XYMFileNameUtil.cs" />
-    <Compile Include="FileUtils\XYMMimeMapping.cs" />
-    <Compile Include="Models\XYMSmtpEmailModel.cs" />
-    <Compile Include="Models\XYMHttpPostFileModel.cs" />
-    <Compile Include="Models\XYMHttpRequestModel.cs" />
-    <Compile Include="Models\XYMHttpResponseModel.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="NetworkUtils\XYMHttpUtil.cs" />
-    <Compile Include="TextUtils\XYMTextEncoder.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\XiyouMobileFoundation\XiyouMobileFoundation.csproj">
+      <Project>{59865ea1-625b-4cbe-a73f-e2488bac8c15}</Project>
+      <Name>XiyouMobileFoundation</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

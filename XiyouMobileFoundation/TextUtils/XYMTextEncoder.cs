@@ -19,15 +19,17 @@ namespace XiyouMobileFoundation.TextUtils
     /// </summary>
     public class XYMTextEncoder
     {
+        private const string DEFAULT_CODE = "UTF-8";  // 默认编码
+
         /// <summary>
         /// URL转码
         /// </summary>
         /// <param name="text">要转换的文本</param>
         /// <param name="code">转码类型</param>
         /// <returns>转换后的字符串</returns>
-        public static string UrlEncode(string text, string code = "utf-8")
+        public static string UrlEncode(string text, string code = DEFAULT_CODE)
         {
-            return System.Web.HttpUtility.UrlEncode(text, Encoding.GetEncoding(code));
+            return System.Web.HttpUtility.UrlEncode(text, GetCode(code));
         }
 
         /// <summary>
@@ -37,7 +39,7 @@ namespace XiyouMobileFoundation.TextUtils
         /// <returns>UTF-8字符串</returns>
         public static string GBKToUTF8(byte[] data)
         {
-            byte[] trans = Encoding.Convert(Encoding.GetEncoding("GBK"), Encoding.UTF8, data);
+            byte[] trans = Encoding.Convert(GetCode("GBK"), Encoding.UTF8, data);
             return Encoding.UTF8.GetString(trans);
         }
 
@@ -48,7 +50,7 @@ namespace XiyouMobileFoundation.TextUtils
         /// <returns>UTF-8字符串</returns>
         public static string GB2312ToUTF8(byte[] data)
         {
-            byte[] trans = Encoding.Convert(Encoding.GetEncoding("GB2312"), Encoding.UTF8, data);
+            byte[] trans = Encoding.Convert(GetCode("GB2312"), Encoding.UTF8, data);
             return Encoding.UTF8.GetString(trans);
         }
 
@@ -59,8 +61,38 @@ namespace XiyouMobileFoundation.TextUtils
         /// <returns>UTF-8字符串</returns>
         public static string ISO8859ToUTF8(byte[] data)
         {
-            byte[] trans = Encoding.Convert(Encoding.GetEncoding("ISO8859-1"), Encoding.UTF8, data);
+            byte[] trans = Encoding.Convert(GetCode("ISO8859-1"), Encoding.UTF8, data);
             return Encoding.UTF8.GetString(trans);
+        }
+
+        /// <summary>
+        /// Bytes转Base64
+        /// </summary>
+        /// <param name="obj">需要转换的流</param>
+        /// <returns>转换后的字符串</returns>
+        public static string BytesToBase64(byte[] obj)
+        {
+            return Convert.ToBase64String(obj);
+        }
+
+        /// <summary>
+        /// String转Base64
+        /// </summary>
+        /// <param name="text">需要转换的文本</param>
+        /// <returns>转换后的字符串</returns>
+        public static string StringToBase64(string text, string code = DEFAULT_CODE)
+        {
+            return Convert.ToBase64String(GetCode(code).GetBytes(text));
+        }
+
+        /// <summary>
+        /// 获取编码
+        /// </summary>
+        /// <param name="code">编码类型</param>
+        /// <returns>Encoding类型数据</returns>
+        private static Encoding GetCode(string code)
+        {
+            return Encoding.GetEncoding(code);
         }
     }
 }
