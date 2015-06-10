@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,6 +46,7 @@
     <Compile Include="EncryptUtil\XYMDesUtil.cs" />
     <Compile Include="FileUtils\XYMFileNameUtil.cs" />
     <Compile Include="FileUtils\XYMMimeMapping.cs" />
+    <Compile Include="ImageUtils\XYMImageUtils.cs" />
     <Compile Include="Models\XYMSmtpEmailModel.cs" />
     <Compile Include="Models\XYMHttpPostFileModel.cs" />
     <Compile Include="Models\XYMHttpRequestModel.cs" />

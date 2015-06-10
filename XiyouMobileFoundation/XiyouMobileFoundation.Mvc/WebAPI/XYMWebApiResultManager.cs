@@ -21,7 +21,16 @@ namespace XiyouMobileFoundation.WebAPI
     {
         NOT_FOUND, SERVER_ERROR, PARAM_ERROR, DB_ERROR, METHOD_NOT_ALLOW,
         USER_NOT_EXISTED, USER_EXISTED, USER_NOT_AVALIABLE, NOT_LOGIN, VERIFIED_FAILED,
+        ITEM_ADDED,
         UNKNOWN_ERROR
+    }
+
+    /// <summary>
+    /// API常见正常返回类型枚举
+    /// </summary>
+    public enum WebApiNormalTypes
+    {
+        SUCCESS
     }
 
     /// <summary>
