@@ -1,4 +1,13 @@
-﻿using System;
+﻿/**
+ * Copyright (C) 2015 Xiyou Mobile Application Lab.
+ * 
+ * XiyouMobileFoundation
+ * 
+ * XYMImageUtils.cs
+ * 
+ * Created by Yuan Guozheng on 2015-6-10.
+ */
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -7,6 +16,9 @@ using System.Text;
 
 namespace XiyouMobileFoundation.ImageUtils
 {
+    /// <summary>
+    /// 图片工具类
+    /// </summary>
     public class XYMImageUtils
     {
         /// <summary>
