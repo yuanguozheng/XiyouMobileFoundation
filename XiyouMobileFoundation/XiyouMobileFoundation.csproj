@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="EmailUtil\XYMSmtpEmailSender.cs" />
     <Compile Include="EncryptUtil\XYMDesUtil.cs" />
+    <Compile Include="EncryptUtil\XYMHashUtil.cs" />
     <Compile Include="FileUtils\XYMFileNameUtil.cs" />
     <Compile Include="FileUtils\XYMMimeMapping.cs" />
     <Compile Include="ImageUtils\XYMImageUtils.cs" />

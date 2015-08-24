@@ -140,7 +140,10 @@ namespace XiyouMobileFoundation.NetworkUtils
                 responseModel.IsSuccess = false;
                 OnGetResponse(responseModel);
             }
-            ConstructCallback();
+            if (response != null)
+            {
+                ConstructCallback();
+            }
         }
 
         /// <summary>
